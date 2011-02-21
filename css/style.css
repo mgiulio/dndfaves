@@ -32,8 +32,13 @@ body {
 	display: inline;
 	color: #eeee00;
 	font-size: 20px;
+	margin-left: 10px;
+	text-decoration: none;
 }
-#header #collect-checkbox {/* TOFIX */
+#header #searchbox {
+	margin-left: 10px;
+}
+#header #collect-button-label {
 	float: right;
 }
 #header #toolbar li {

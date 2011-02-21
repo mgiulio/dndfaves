@@ -30,8 +30,8 @@
     
 		<div id="header">
 			<h1><a href="/">DnDFaves</a></h1>
-			<input type="text" value="search">
-			<label for="collect-checkbox">Collect </label><input type="checkbox" id="collect-checkbox">
+			<input id="searchbox" type="text" value="search">
+			<label id="collect-button-label" for="collect-checkbox">Collect </label><input type="checkbox" id="collect-checkbox">
 			<!--<ul id="toolbar">
 				<li id="logo"><h1><a href="/">DnDFaves</a></h1></li>
 				<li id="search-box"><input type="text" value="search"></li>
