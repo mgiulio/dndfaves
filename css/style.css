@@ -177,7 +177,7 @@ body {
 }
 #sidebar ul {
 	list-style: none;
-	line-height: 1;
+	line-height: 1.66;
 }
 #sidebar ul ul {
 	margin-left: 20px;
