@@ -9,6 +9,26 @@ body {
     /*font: 14px Arial;*/
 	font: 14px Georgia, serif; 
 	background: #ffffff;
+	color: #000000;
+}
+a {
+	text-decoration: none;
+	border-bottom: 1px dotted;
+	color: #800080;
+}
+a:link {
+	/* color: ; */
+}
+a:visited {
+	/* color: ; */
+}
+a:hover {
+	border-bottom-style: solid;
+	/* color: ; */
+}
+a:active {
+	border-bottom-style: solid;
+	/* color: ; */
 }
 #header {
 	position: absolute;
@@ -30,10 +50,13 @@ body {
 }
 #header h1 {
 	display: inline;
-	color: #eeee00;
 	font-size: 20px;
 	margin-left: 10px;
 	text-decoration: none;
+}
+#header h1 a {
+	color: #ccff00;
+	border-bottom-style: none;
 }
 #header #searchbox {
 	margin-left: 10px;
@@ -190,17 +213,10 @@ body {
 	background: #000000 url(../img/ui/header-bg.gif) repeat-x;
     border-top: 1px solid #000000;
 }
-#footer > a {
+#footer  a {
 	margin-left: 10px;
-	color: orange;
+	color: #ff8c3f;
 }
 #footer span {
 	margin-left: 10px;
-}
-a {
-	border-bottom: 1px dotted; 
-	text-decoration: none;
-}
-a:hover {
-	border-bottom-style: solid;
 }
