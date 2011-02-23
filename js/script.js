@@ -88,7 +88,7 @@ $(function() {
 						pendingRequestCounter--;
 					},
 					error: function(jqXHR, textStatus, errorThrown) { 
-						console.log('Ajax failure: Could not add "' + picTitle + ' to "' + collectionId + '", try: ' + retryCounter + ': ', textStatus, errorThrown, jqXHR);
+						log('Ajax failure: Could not add "' + picTitle + ' to "' + collectionId + '", try: ' + retryCounter + ': ' + textStatus + errorThrown + jqXHR);
 						$.n.warning('Could not save "' + picTitle + ' to "' + collectionId + '", try: ' + retryCounter + '/' + ajaxSettings.maxRetry);
 						if (retryCounter >= ajaxSettings.maxRetry) {
 							$.n.error('Could not save "' + picTitle + '" to "' + collectionId);
@@ -202,6 +202,8 @@ $(function() {
     };
 	
 	function log(msg) {
+		if (typeof console === "undefined")
+			return;
 		console.log(msg);
 	}
 
