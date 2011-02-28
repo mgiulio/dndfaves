@@ -126,8 +126,8 @@
 		</div>
 
 		<div id="footer">
-			<a href="http://webdevdemos.sourceforge.net">Source Code</a>
-			<a href="http://giuliom.users.sourceforge.net">Notes</a>
+			<a href="http://github.com/giuliom/dndfaves">Source Code</a>
+			<a href="http://github.com/giuliom/dndfaves/wiki">Notes</a>
 			<span>Photoset from <a href="http://www.nasa.gov/multimedia/imagegallery/">Nasa</a></span>
 		</div>
     
