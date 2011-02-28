@@ -81,7 +81,7 @@ $(function() {
 				
 				// Send the fave to the server
 				pendingRequestCounter++;
-				$.ajax('/php/fave.php', {
+				$.ajax('../php/fave.php', {
 					data: {item: picTitle, coll: collectionId}, 
 					success: function(data, textStatus, jqXHR) {
 						$.n.success(picTitle + ' added to collection ' + collectionId);
@@ -96,7 +96,7 @@ $(function() {
 						}
 						else {
 							retryCounter++;
-							$.ajax('/php/fave.php', this);
+							$.ajax('../php/fave.php', this);
 						}
 					}
 				});
@@ -152,7 +152,7 @@ $(function() {
 		$('.gallery .thumb').draggable('option', 'disabled', true);
 		$('#collect-checkbox').button('option', 'disabled', true);
 		
-		$.ajax('/php/get-collection.php', {
+		$.ajax('../php/get-collection.php', {
 			//data: {id: 'anime'},
 			//dataType: 'json',
 			success: function(data, textStatus, jqXHR) {
@@ -185,7 +185,7 @@ $(function() {
 				}
 				else {
 					retryCounter++;
-					$.ajax('/php/get-collection.php', this);
+					$.ajax('../php/get-collection.php', this);
 				}
 			}
 		});
