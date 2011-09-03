@@ -79,7 +79,7 @@ $(function() {
 
 				log('Dropped ' + picTitle + ' on collection ' + collectionId);
 				
-				// Send the fave to the server
+				// Send the fave to server
 				pendingRequestCounter++;
 				$.ajax('php/fave.php', {
 					data: {item: picTitle, coll: collectionId}, 

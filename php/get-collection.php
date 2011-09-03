@@ -1,6 +1,6 @@
 <?php
 
-$errPr = 50;
+$errPr = 0;
 $errCoin = rand(0, 100);
 if ($errCoin <= $errPr) {
 	sleep(10);

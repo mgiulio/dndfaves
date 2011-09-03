@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>DNDfaves - mgiulio</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href='http://fonts.googleapis.com/css?family=Coustard' rel='stylesheet' type='text/css'>
+	<link href="http://mgiulio.github.com/prjnotes/style.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+	</style>
+</head>
+<body>
+<div id="page-wrap">
+	<h2>About</h2>
+	<p>
+		
+	</p>
+	
+	<h2>Demo and Source</h2>
+	<ul>
+		<li><a href="http://mgiulio.altervista.com/wp-content/demo/dndfaves/index.php">Source</a></li>
+		<li><a href="http://github.com/mgiulio/wp-scrnshots-com">Source</a></li>
+	</ul>
+	
+	
+	(FLoated sshot here) The inspiration for<a href="http:///"> this demo</a> came from <a href="http://www.deviantart.com">DeviantART</a>(DA). I was looking for  some concrete example to  exercise drag and drop(<em>DnD</em>) and so I  remembered the '<em>collect favorites</em>'  user interface used on that site.  Started only as an exercise in <em>DnD </em>with  time it evolved to a catch-all   exercise in design, CSS, JavaScript, server side code(PHP), Ajax and more. Please keep in mind that  it is not a complete application, read below for limitations.
+
+Before jumping into some notes here a quick list of used languages, libraries and other software:
+<ul>
+	<li>Coyer</li>
+	<li>jQuery 1.5</li>
+	<li>jQuery UI 1.8.9</li>
+	<li>Notifications</li>
+	<li>PHP 5.?</li>
+	<li>Zend JSON</li>
+	<li>Sessions, no db</li>
+</ul>
+<h3>Features and limitations</h3>
+As I said in the introduction, this demo is an (partial) imitation of the   drag and drop user interaction used on DA for collecting favorites, so I   won't go in datail about the user experience. Have a tour on that site to have an idea of what is going on here.
+
+No LightBox yet.
+
+The collection folders management is limited,  it wasn't the main   focus of this exercise. The folders are  predetermined, user cannot add   new ones neither delete, rename them or  make any CRUD-like operation on   their faves.
+
+Issue of space in panel
+
+Design Decisions
+
+Let's dive in some implementation notes.
+<h3>Graphics Design</h3>
+The page has a look that volunt resemble the original DeviantART    design, both in the layout and in the color scheme.  The layout is full    screen and consist of a thin header, a narrow left sidebar colum for   the  (fictional) navigation, a larger main colums for the thumbs and   finally  a header-like footer. The sidebar is fixed while the thumbs   colums is  fluid.
+
+custom with the Dark Hive  theme
+
+The thumbnails were generated offline with the DBP Gimp plugin.
+
+The photoset used is from NASA.
+
+Other graphics is original pure Programmer Art (TM) :).
+<h3>HTML&amp;CSS</h3>
+Layout
+Implementation of layout described in the design paagraph
+The CSS implementation is from the LayoutPack templates by Chrish Coyer .
+Coolections
+Here or in Js section?
+Cross-browser concerns
+<h3>JavaScript</h3>
+For the drag and drop functionality I picked up the <a href="http://">Draggable</a> and  <a href="http://">Droppable</a> Interactions of jQuery UI.
+
+Draggables were used for the gallery thumbs:
+<pre lang="javascript">$('.gallery .thumb').draggable({
+    revert: 'invalid',
+    helper: 'clone',
+    opacity: 0.7,
+    //cancel: 'img',
+    cursor: 'move',
+    zIndex: 100,
+    start: function(e, ui) {
+        $('#collect-checkbox').attr('checked', true).change();
+    }
+});
+</pre>
+I choose to use a transparent clone of the thumb as the drag proxy. Here I had<a href="http://"> some trouble</a> for a bug introduced in the  .clone() method of jQuery 1.5.
+The revert option were used to 'elastically' return to its original position a not-dropped thumb.
+The highest CSS layer in use has a vaue of 100.
+Putting the thumbnail in the faves: Random point code
+Used the Button widget.
+
+About theDroppables:
+<h3>Ajax</h3>
+Sessions
+
+Use of 1.5 features
+
+$.getJSON bug
+
+Error andling
+Notification
+Ajax interaction paradim
+
+Page Leave
+<h3>Conclusion</h3>
+<h4>Future Work</h4>
+<ul>
+	<li>LightBox</li>
+	<li>This was an imitation of the system used on DA; in the future I  would like to explore other interaction patterns to solve the same  problem.</li>
+	<li>Ajax Mocking</li>
+	<li>Animation performance and CSS Transitions, CSS3 with graceful degradation</li>
+	<li>Cross-Browser console</li>
+	<li>Adding more informations to this post. I will edit this post to add more infos</li>
+</ul>
+<h4>Links</h4>
+<ul>
+	<li><a href="http://">Live Demo</a></li>
+	<li><a href="http://">Source code on GitHub</a></li>
+</ul>
+Please feel free to leave any critic, suggestion, corrections in the comments.
+
+Lack of cross browser inline-block hacks. 
+Tested on ...
+
+
+Make use of headings?
+Include sshots:
+	inline thumbs with full pic view alla lightbox
+	Agallery?
+	Post also on Flickr?
+	A YT video?
+	shots and video on DA?
+		mypage
+		in interfaces category!!
+	
+	
+	
+	<p style="text-align: center;">(Medium size centeredsshot here?)</p>
+<p>The inspiration for <a href="/dndfaves/">this demo</a> came from <a href="http://giuliom.deviantart.com">DeviantART</a>(DA). I was looking for  some concrete example to  exercise drag and drop(<em>DnD</em>) and so I  remembered the &#8216;<em>collect favorites</em>&#8216;  user interface used on that site.  Started only as an exercise in <em>DnD </em>with  time it evolved to a catch-all   exercise in design, CSS, JavaScript, server side code(PHP), Ajax and more. Please keep in mind that  it is not a complete application, read below for limitations.  Before jumping into some notes here a quick list of used languages, libraries and other software:</p>
+
+<ul>
+<li>Coyer</li>
+<li>jQuery 1.5</li>
+<li>jQuery UI 1.8.9</li>
+<li>Notifications</li>
+<li>PHP 5.?</li>
+<li>Zend JSON</li>
+<li>Sessions, no db</li>
+</ul>
+<h3>Features and limitations</h3>
+
+<p>As I said in the introduction, this demo is an (partial) imitation of the   drag and drop user interaction used on DA for collecting favorites, so I   won&#8217;t go in datail about the user experience. Have a tour on that site to have an idea of what is going on here.</p>
+<p>The collection folders management is limited,  it wasn&#8217;t the main   focus of this exercise. The folders are  predetermined, user cannot add   new ones neither delete, rename them or  make any CRUD-like operation on   their faves.</p>
+<p>There is no something like Lightbox implemented, so clicking on a thumbnail will open the full size picture in a new page.</p>
+<p>Issue of space in panel.</p>
+<p>Design Decisions.</p>
+<p>Let&#8217;s dive in some implementation notes.</p>
+<h3>Graphics Design</h3>
+
+<p>The page has a look that resemble(s) the original DeviantART    design, both in the layout and in the color scheme.  I have worked on some original designs but they are still incomplete; if I&#8217;ll be able to find some time to finish them I will update the demo.</p>
+<p>The layout is full    screen and consist of a thin header, a narrow left sidebar colum for   the  (fictional) navigation, a larger main colums for the thumbs and   finally  a header-like footer. The sidebar is fixed while the thumbs   colums is  fluid.</p>
+<p>For the jQuery UI collect toggle button I used the Dark Hive  theme.</p>
+<p>The photoset used is from NASA. The thumbnails were generated offline with the DBP Gimp plugin.</p>
+<p>Other graphics is original pure Programmer Art (TM) <img src='http://giuliom.dev/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> .</p>
+<h3>HTML&amp;CSS</h3>
+<p>The site layout descibed above was implemented following the examples from the LayoutPack templates by Chrish Coyer. Which templtae?</p>
+
+<p>Give some description of the technique.</p>
+<p>Coolections:  Here or in Js section? Cross-browser concerns</p>
+<h3>JavaScript</h3>
+<p>For the drag and drop functionality I picked up the <a href="http://">Draggable</a> and  <a href="http://">Droppable</a> Interactions of jQuery UI.</p>
+<p>Draggables were used for the gallery thumbs:</p>
+<pre lang="javascript">$('.gallery .thumb').draggable({
+revert: 'invalid',
+helper: 'clone',
+opacity: 0.7,
+//cancel: 'img',
+cursor: 'move',
+zIndex: 100,
+start: function(e, ui) {
+$('#collect-checkbox').attr('checked', true).change();
+}
+});</pre>
+
+<p>I choose to use a transparent clone of the thumb as the drag proxy. Here I had<a href="http://"> some trouble</a> for a bug introduced in the  .clone() method of jQuery 1.5.</p>
+<p>The revert option were used to &#8216;elastically&#8217; return to its original position a not-dropped thumb.</p>
+<p>The highest CSS layer in use has a vaue of 100.</p>
+<p>Putting the thumbnail in the faves.</p>
+<p>Random point code.</p>
+
+<p>Used the Button widget.</p>
+<p>About the Droppables.</p>
+<h3>PHP</h3>
+<h3>Ajax</h3>
+<p>Sessions</p>
+<p>Use of 1.5 features</p>
+<p>$.getJSON bug  Error andling</p>
+<p>Notifications</p>
+<p>Ajax interaction paradim</p>
+
+<p>Page Leave</p>
+<p>Mockajax</p>
+<h3>Conclusion</h3>
+<h4>Future Work</h4>
+<ul>
+<li>LightBox</li>
+<li>This was an imitation of the system used on DA; in the future I  would like to explore other interaction patterns to solve the same  problem.</li>
+<li>Ajax Mocking</li>
+<li>Animation performance and CSS Transitions, CSS3 with graceful degradation</li>
+
+<li>Cross-Browser console</li>
+<li>Adding more informations to this post. I will edit this post to add more infos</li>
+</ul>
+<h4>Links</h4>
+<ul>
+<li><a href="/dndfaves/">Live Demo</a></li>
+<li><a href="http://github.com/giuliom/dndfaves">Source code on GitHub</a></li>
+</ul>
+<p>Please feel free to leave any critic, suggestion, corrections in the comments.  Lack of cross browser inline-block hacks. Tested on &#8230;  Make use of headings? Include sshots: inline thumbs with full pic view alla lightbox Agallery? Post also on Flickr? A YT video? shots and video on DA? mypage in interfaces category!!</p>
+
+<span class="edit-link"><a class="post-edit-link" href="http://giuliom.dev/wp-admin/post.php?post=56&amp;action=edit" title="Edit Page">Edit</a></span>	
+
+</div> <!-- #page-wrap -->
+
+</body>
+</html>
